@@ -194,6 +194,7 @@
   .p-mid .big{display:block;text-align:center;line-height:1.06}
   .p-mid .num{font-size:1.3em;line-height:1}
   .p-mid .unit{font-size:.46em;font-weight:500;color:#D6AF6B;letter-spacing:.02em;display:inline;vertical-align:.5em}
+  .p-mid .sub{white-space:normal;line-height:1.35}
   .p-match{text-align:left}
   .p-match .big{justify-content:flex-end}
   .p-match .sub{white-space:normal;line-height:1.4;max-width:100%;font-size:clamp(11px,.88vw,17px)}
@@ -411,7 +412,7 @@ const SHIA_OCCASIONS = {
   '3/17':'مولد النبي ﷺ ومولد الإمام الصادق عليه السلام',
   '4/8':'مولد الإمام الحسن العسكري عليه السلام', '4/10':'وفاة السيدة معصومة عليها السلام',
   '5/5':'مولد السيدة زينب عليها السلام',
-  '5/13':'وفاة السيدة فاطمة الزهراء عليها السلام (الرواية الأولى: بعد ٧٥ يومًا)', '6/3':'وفاة السيدة فاطمة الزهراء عليها السلام (الرواية الثانية: بعد ٩٥ يومًا)', '6/20':'مولد السيدة فاطمة الزهراء عليها السلام',
+  '5/13':'وفاة السيدة الزهراء عليها السلام (الرواية الأولى)', '6/3':'وفاة السيدة الزهراء عليها السلام (الرواية الثانية)', '6/20':'مولد السيدة فاطمة الزهراء عليها السلام',
   '7/1':'مولد الإمام الباقر عليه السلام', '7/3':'استشهاد الإمام الهادي عليه السلام', '7/10':'مولد الإمام الجواد عليه السلام',
   '7/13':'مولد أمير المؤمنين الإمام علي عليه السلام', '7/25':'استشهاد الإمام الكاظم عليه السلام', '7/27':'المبعث النبوي الشريف',
   '8/3':'مولد الإمام الحسين عليه السلام', '8/4':'مولد أبي الفضل العباس عليه السلام', '8/5':'مولد الإمام السجاد عليه السلام',
@@ -433,7 +434,7 @@ function tickOccasion(){
       const f = new Intl.DateTimeFormat('en-u-ca-' + CONFIG.hijriCalendar,{timeZone:CONFIG.timezone,month:'numeric',day:'numeric'}).formatToParts(HJ(d));
       const key = (+f.find(x=>x.type==='month').value) + '/' + (+f.find(x=>x.type==='day').value);
       const o = SHIA_OCCASIONS[key];
-      if(o){ txt = (k===0 ? 'اليوم: ' : k===1 ? 'غدًا: ' : 'بعد ' + ar(k) + ' أيام: ') + o; break; }
+      if(o){ txt = (k===0 ? 'اليوم: ' : k===1 ? 'غدًا: ' : k===2 ? 'بعد يومين: ' : 'بعد ' + ar(k) + ' أيام: ') + o; break; }
     }
   }catch(e){}
   el.textContent = txt;
