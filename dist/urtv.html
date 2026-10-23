@@ -339,7 +339,7 @@ const CONFIG = {
   latitude: _num('lat', 24.7136),
   longitude: _num('lon', 46.6753),
   timezone: _Q.get('tz') || 'Asia/Riyadh',
-  hijriCalendar: 'islamic',   // astronomical calendar (the Shia dates follow the new moon, not Umm al-Qura)
+  hijriCalendar: 'islamic-civil',   // arithmetic calendar: matches the Shia date in Qatif (11 Jumada I 1448 on 23 Oct 2026), not Umm al-Qura
   hijriOffset: 0,             // days to add or take away (-1, 0, 1) to match the local moon sighting
   prayerMethod: 0,   // Aladhan 0: Shia Ithna-Ashari (Jafari), Leva Institute, Qum
   // followed teams in priority order: #teams=id,id,... (up to 10); older builds send team1/team2

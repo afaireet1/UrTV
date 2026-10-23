@@ -738,7 +738,7 @@ public class MainActivity extends Activity {
         String hijri = "";
         try {
             android.icu.text.SimpleDateFormat f = new android.icu.text.SimpleDateFormat(
-                    "EEEE، d MMMM y", new android.icu.util.ULocale("ar_SA@calendar=islamic"));   // astronomical: the Shia dates follow the new moon
+                    "EEEE، d MMMM y", new android.icu.util.ULocale("ar_SA@calendar=islamic-civil"));   // arithmetic calendar: matches the Shia date in Qatif
             Calendar hj = (Calendar) now.clone();
             hj.add(Calendar.DAY_OF_MONTH, HIJRI_OFFSET_DAYS);
             hijri = f.format(hj.getTime()).replaceAll("\\s*هـ\\s*$", "") + " هـ";
