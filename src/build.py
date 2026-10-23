@@ -182,6 +182,9 @@ def hadith_for_screen():
     book, its number and a grade: al-Tirmidhi's own, or for the other Sunan Al-Albani's. One a scholar grades weak,
     one from the four Sunan Al-Albani does not grade Sahih, Hasan or Hasan Sahih, or one al-Tirmidhi does not grade
     حسن or صحيح, is not shown."""
+    shia = ROOT / "assets/shared/hadith_shia.json"   # Al-Kafi (graded by al-Majlisi) and Nahj al-Balagha, from thaqalayn-api.net
+    if shia.exists():
+        return json.loads(shia.read_text(encoding="utf-8"))
     digits = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
     out = []
     for h in json.loads((ROOT / "assets/shared/hadith.json").read_text(encoding="utf-8")):

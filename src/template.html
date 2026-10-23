@@ -264,6 +264,7 @@
     <div class="dates">
       <div class="hijri" id="hijri">—</div>
       <div class="greg" id="greg">—</div>
+      <div class="hijri" id="occasion" style="font-size:.78em;color:var(--gold,var(--sand))"></div>
       <div class="rule"></div>
     </div>
 
@@ -330,7 +331,7 @@ const CONFIG = {
   latitude: _num('lat', 24.7136),
   longitude: _num('lon', 46.6753),
   timezone: _Q.get('tz') || 'Asia/Riyadh',
-  prayerMethod: 4,
+  prayerMethod: 0,   // Aladhan 0: Shia Ithna-Ashari (Jafari), Leva Institute, Qum
   // followed teams in priority order: #teams=id,id,... (up to 10); older builds send team1/team2
   teamIds: (_Q.has('teams') ? _Q.get('teams').split(',')
             : [_Q.has('team1') ? _Q.get('team1') : '136013', _Q.has('team2') ? _Q.get('team2') : '136137'])
@@ -390,7 +391,44 @@ function tickClock(){
   document.getElementById('ck-ap').textContent = p.h < 12 ? 'ص' : 'م';
 }
 
+// Shia occasions by Hijri month/day (Umm al-Qura calendar: the local sighting can differ by a day)
+const SHIA_OCCASIONS = {
+  '1/1':'رأس السنة الهجرية', '1/10':'يوم عاشوراء: استشهاد الإمام الحسين عليه السلام', '1/25':'استشهاد الإمام السجاد عليه السلام',
+  '2/7':'مولد الإمام الكاظم عليه السلام', '2/20':'أربعينية الإمام الحسين عليه السلام', '2/28':'وفاة النبي ﷺ واستشهاد الإمام الحسن عليه السلام',
+  '2/30':'استشهاد الإمام الرضا عليه السلام',
+  '3/8':'استشهاد الإمام الحسن العسكري عليه السلام', '3/9':'بداية إمامة الإمام المهدي عجل الله فرجه',
+  '3/17':'مولد النبي ﷺ ومولد الإمام الصادق عليه السلام',
+  '4/8':'مولد الإمام الحسن العسكري عليه السلام', '4/10':'وفاة السيدة معصومة عليها السلام',
+  '5/5':'مولد السيدة زينب عليها السلام',
+  '6/3':'وفاة السيدة فاطمة الزهراء عليها السلام', '6/20':'مولد السيدة فاطمة الزهراء عليها السلام',
+  '7/1':'مولد الإمام الباقر عليه السلام', '7/3':'استشهاد الإمام الهادي عليه السلام', '7/10':'مولد الإمام الجواد عليه السلام',
+  '7/13':'مولد أمير المؤمنين الإمام علي عليه السلام', '7/25':'استشهاد الإمام الكاظم عليه السلام', '7/27':'المبعث النبوي الشريف',
+  '8/3':'مولد الإمام الحسين عليه السلام', '8/4':'مولد أبي الفضل العباس عليه السلام', '8/5':'مولد الإمام السجاد عليه السلام',
+  '8/15':'مولد الإمام المهدي عجل الله فرجه',
+  '9/10':'وفاة السيدة خديجة عليها السلام', '9/15':'مولد الإمام الحسن المجتبى عليه السلام',
+  '9/19':'ضربة الإمام علي عليه السلام', '9/21':'استشهاد أمير المؤمنين الإمام علي عليه السلام',
+  '10/1':'عيد الفطر المبارك', '10/25':'استشهاد الإمام الصادق عليه السلام',
+  '11/1':'مولد السيدة معصومة عليها السلام', '11/11':'مولد الإمام الرضا عليه السلام', '11/29':'استشهاد الإمام الجواد عليه السلام',
+  '12/7':'استشهاد الإمام الباقر عليه السلام', '12/9':'يوم عرفة', '12/10':'عيد الأضحى المبارك',
+  '12/18':'عيد الغدير الأغر', '12/24':'يوم المباهلة'
+};
+function tickOccasion(){
+  const el = document.getElementById('occasion');
+  if(!el) return;
+  let txt = '';
+  try{
+    for(const k of [0,1,2,3]){
+      const d = new Date(Date.now() + k*86400000);
+      const f = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{timeZone:CONFIG.timezone,month:'numeric',day:'numeric'}).formatToParts(d);
+      const key = (+f.find(x=>x.type==='month').value) + '/' + (+f.find(x=>x.type==='day').value);
+      const o = SHIA_OCCASIONS[key];
+      if(o){ txt = (k===0 ? 'اليوم: ' : k===1 ? 'غدًا: ' : 'بعد ' + ar(k) + ' أيام: ') + o; break; }
+    }
+  }catch(e){}
+  el.textContent = txt;
+}
 function tickDates(){
+  tickOccasion();
   const now = new Date();
   try{
     let h = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',{
@@ -448,10 +486,11 @@ function computePrayers(){
     return angleTime(a, t, false);
   };
   const adj = h => h + tz - lng/15;
-  const fajr = adj(angleTime(18.5, 5, true)), dhuhr = adj(noon(12)), asr = adj(asrTime(13));
+  // Jafari (same as Aladhan method 0): Fajr 16 deg, Maghrib 4 deg below the horizon, Isha 14 deg
+  const fajr = adj(angleTime(16, 5, true)), dhuhr = adj(noon(12)), asr = adj(asrTime(13));
   const sunrise = adj(angleTime(.833, 6, true));
-  const maghrib = adj(angleTime(.833, 18, false));
-  const isha = maghrib + (hijriMonthNow() === 9 ? 120 : 90)/60;
+  const maghrib = adj(angleTime(4, 18, false));
+  const isha = adj(angleTime(14, 18, false));
   const hm = h => { const m = Math.round(fix(h, 24)*60) % 1440; return pad(Math.floor(m/60)) + ':' + pad(m%60); };
   return {Fajr:hm(fajr), Sunrise:hm(sunrise), Dhuhr:hm(dhuhr), Asr:hm(asr), Maghrib:hm(maghrib), Isha:hm(isha)};
 }
@@ -1140,7 +1179,7 @@ function pixelShift(){
 
 // Background photos: the hosted set in photos/ (photos/index.json in the repo). A hosted photo is used only
 // once it has loaded; offline, or if it fails, a bundled one is shown, so the screen is never empty.
-const PHOTO_BASE = 'https://raw.githubusercontent.com/tshi-dev/UrTV/master/photos/';
+const PHOTO_BASE = 'https://raw.githubusercontent.com/afaireet1/UrTV/master/photos/';
 let REMOTE_BGS = (()=>{ try{ return JSON.parse(localStorage.getItem('photoIndex') || '[]'); }catch(e){ return []; } })();
 
 async function loadPhotoIndex(){
