@@ -635,17 +635,31 @@ function tickRamadan(){
     return;
   }
 
-  // ---- countdown mode ----
-  const st = ramadanStart();
-  elL.textContent = 'رمضان ' + ar(st ? st.hy : hijriYearNow());
-  if(!st){ elD.textContent='—'; elS.textContent=''; return; }
-  const rp2 = riyadhParts();
-  const days = Math.max(0, Math.round(
-    (Date.UTC(st.y, st.mo-1, st.d) - Date.UTC(rp2.y, rp2.mo-1, rp2.d)) / 86400000));
-  elD.innerHTML = ar(days) + ' <span class="unit">يوم</span>';
-  elS.textContent = days === 0 ? 'رمضان مبارك'
-    : 'يبدأ ' + new Intl.DateTimeFormat(GREG,{timeZone:CONFIG.timezone,weekday:'long',day:'numeric',month:'long'})
-        .format(new Date(Date.UTC(st.y, st.mo-1, st.d, 12)));
+  // ---- next Ahl al-Bayt occasion (instead of the Ramadan countdown) ----
+  const nx = nextAhlBayt();
+  elL.textContent = 'مناسبات أهل البيت عليهم السلام';
+  if(!nx){ elD.textContent='—'; elS.textContent=''; return; }
+  elD.innerHTML = nx.days === 0 ? 'اليوم' : ar(nx.days) + ' <span class="unit">' + (nx.days === 1 ? 'يوم' : nx.days === 2 ? 'يومين' : nx.days <= 10 ? 'أيام' : 'يوم') + '</span>';
+  elS.textContent = nx.name;
+}
+
+// the next occasion of Ahl al-Bayt (not the general ones: new year, the two Eids, Arafa), cached per day
+const NOT_AHL = {'1/1':1, '10/1':1, '12/9':1, '12/10':1};
+let AHL_CACHE = {day:'', val:null};
+function nextAhlBayt(){
+  const dayKey = new Intl.DateTimeFormat('en-CA',{timeZone:CONFIG.timezone}).format(new Date());
+  if(AHL_CACHE.day === dayKey) return AHL_CACHE.val;
+  let found = null;
+  try{
+    const fmt = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{timeZone:CONFIG.timezone,month:'numeric',day:'numeric'});
+    for(let i=0;i<400 && !found;i++){
+      const f = fmt.formatToParts(new Date(Date.now()+i*86400000));
+      const key = (+f.find(x=>x.type==='month').value) + '/' + (+f.find(x=>x.type==='day').value);
+      if(SHIA_OCCASIONS[key] && !NOT_AHL[key]) found = {days:i, name:SHIA_OCCASIONS[key]};
+    }
+  }catch(e){}
+  AHL_CACHE = {day: dayKey, val: found};
+  return found;
 }
 
 const TEAM_AR = __TEAMS_AR__;   // assets/shared/teams-ar.json
