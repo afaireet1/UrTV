@@ -24,7 +24,7 @@ push_install() {   # $1 apk name, $2 package
   out=$("$PY" -I optimize/tv.py "pm install -r /data/local/tmp/$1")
   if ! grep -q Success <<< "$out"; then
     # only a signing-key clash justifies removing the installed app (and its settings); anything else stops here
-    if grep -qE 'UPDATE_INCOMPATIBLE|signatures do not match' <<< "$out"; then
+    if grep -qE 'UPDATE_INCOMPATIBLE|signatures do not match|VERSION_DOWNGRADE' <<< "$out"; then
       echo "An older $2 signed with another key is installed: removing it, then installing again."
       # removing the home app while the stock one is off would leave the TV with no home at all
       [ "$2" = sa.urtv.home ] && "$PY" -I optimize/tv.py "pm enable ${STOCK%%/*}" > /dev/null || true
@@ -65,7 +65,7 @@ for abi in [a for a in sys.argv[2].split(",") if a] + ["universal", ""]:
   "$PY" -I optimize/tv.py "rm -f /data/local/tmp/$name" > /dev/null
   rm -f "optimize/$name"
   if grep -q Success <<< "$out"; then echo "Installed $name"
-  elif grep -qE 'UPDATE_INCOMPATIBLE|signatures do not match' <<< "$out"; then
+  elif grep -qE 'UPDATE_INCOMPATIBLE|signatures do not match|VERSION_DOWNGRADE' <<< "$out"; then
     echo "$2 is already installed from somewhere else: left as it is (with its settings)."   # never removed
   else echo "!! Install of $name failed: $out"; failed=1; fi
 }

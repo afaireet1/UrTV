@@ -4,13 +4,12 @@ The photos are not credited on screen; they are credited here. All come from [Wi
 
 ## Bundled with the apps (offline fallback)
 
-`sh06.jpg` `sh17.jpg` `sh24.jpg` (1600x900 copies of the hosted ones)
+`sh28.jpg` `sh17.jpg` `sh24.jpg` (1600x900 copies of the hosted ones)
 
 ## Hosted set (`photos/`)
 
 | File | Author | Licence | Source |
 |---|---|---|---|
-| `photos/sh06.jpg` | khamenei.ir | CC BY 4.0 | [The Golden Dome of Imam Reza shrine - 21 March 2018 (13970101 033](https://commons.wikimedia.org/wiki/File:The_Golden_Dome_of_Imam_Reza_shrine_-_21_March_2018_(13970101_0339269).jpg) |
 | `photos/sh10.jpg` | Amir Pashaei | CC BY-SA 4.0 | [An iwan of Fatima Masumeh Shrine, qom, iran.jpg](https://commons.wikimedia.org/wiki/File:An_iwan_of_Fatima_Masumeh_Shrine,_qom,_iran.jpg) |
 | `photos/sh11.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Ceiling of a shabestan in Fatima Masumeh Shrine, Qom, Iran.jpg](https://commons.wikimedia.org/wiki/File:Ceiling_of_a_shabestan_in_Fatima_Masumeh_Shrine,_Qom,_Iran.jpg) |
 | `photos/sh12.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Ceiling of a shabestan in Fatima Masumeh Shrine, qom, iran, 3.jpg](https://commons.wikimedia.org/wiki/File:Ceiling_of_a_shabestan_in_Fatima_Masumeh_Shrine,_qom,_iran,_3.jpg) |
