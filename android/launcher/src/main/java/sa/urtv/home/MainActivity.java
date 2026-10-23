@@ -738,12 +738,17 @@ public class MainActivity extends Activity {
         String hijri = "";
         try {
             android.icu.text.SimpleDateFormat f = new android.icu.text.SimpleDateFormat(
-                    "EEEE، d MMMM y", new android.icu.util.ULocale("ar_SA@calendar=islamic-umalqura"));
-            hijri = f.format(now.getTime()).replaceAll("\\s*هـ\\s*$", "") + " هـ";
+                    "EEEE، d MMMM y", new android.icu.util.ULocale("ar_SA@calendar=islamic"));   // astronomical: the Shia dates follow the new moon
+            Calendar hj = (Calendar) now.clone();
+            hj.add(Calendar.DAY_OF_MONTH, HIJRI_OFFSET_DAYS);
+            hijri = f.format(hj.getTime()).replaceAll("\\s*هـ\\s*$", "") + " هـ";
         } catch (Exception ignored) { }
         String greg = new SimpleDateFormat("d MMMM", new Locale("ar")).format(now.getTime());
         date.setText(arabicDigits(hijri.isEmpty() ? greg : hijri + "  ·  " + greg));
     }
+
+    /** Days to add or take away (-1, 0, 1) so the Hijri date matches the local moon sighting; same as hijriOffset in the screensaver page. */
+    private static final int HIJRI_OFFSET_DAYS = 0;
 
     private static String arabicDigits(String s) {
         StringBuilder b = new StringBuilder(s.length());
