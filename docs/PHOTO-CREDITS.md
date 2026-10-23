@@ -1,101 +1,39 @@
 # Photo credits
 
-The photos are not credited on screen; they are credited here.
+The photos are not credited on screen; they are credited here. All come from [Wikimedia Commons](https://commons.wikimedia.org) under the licence shown (CC0, CC BY or CC BY-SA); each was cropped to 1920x1080.
 
 ## Bundled with the apps (offline fallback)
 
-Five of the hosted photos below, copied into `assets/backgrounds/`:
-`9hWJs7iblh8.jpg` `XDtzu1D2P8c.jpg` `t3dlLOhdEzs.jpg` `LAj90eAXOZA.jpg` `f5ZB0LHwi0s.jpg` 
+`sh06.jpg` `sh17.jpg` `sh24.jpg` (1600x900 copies of the hosted ones)
 
 ## Hosted set (`photos/`)
 
-From [Unsplash](https://unsplash.com), under the [Unsplash License](https://unsplash.com/license).
-
-| File | Photographer | Source |
-|---|---|---|
-| `photos/wTmGtmGQCjQ.jpg` | NEOM | [unsplash](https://unsplash.com/photos/person-with-lantern-under-rock-arch-wTmGtmGQCjQ) |
-| `photos/NPDnHmYsl6Y.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-swimming-in-the-ocean-with-a-mountain-in-the-background-NPDnHmYsl6Y) |
-| `photos/9hWJs7iblh8.jpg` | NEOM | [unsplash](https://unsplash.com/photos/the-sun-is-setting-over-the-mountains-in-the-desert-9hWJs7iblh8) |
-| `photos/-RlktmDy3Ec.jpg` | NEOM | [unsplash](https://unsplash.com/photos/the-sun-is-setting-over-a-mountain-range--RlktmDy3Ec) |
-| `photos/Iy59i0M7oP4.jpg` | NEOM | [unsplash](https://unsplash.com/photos/sandstone-rock-formations-in-hisma-desert-Iy59i0M7oP4) |
-| `photos/yx7TJle8LhM.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-scuba-diver-swims-through-an-underwater-cave-yx7TJle8LhM) |
-| `photos/xXqWVUvf_Gw.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-in-a-canyon-surrounded-by-rocks-xXqWVUvf_Gw) |
-| `photos/WpOMM4uE-F8.jpg` | NEOM | [unsplash](https://unsplash.com/photos/the-sun-is-setting-over-a-desert-landscape-WpOMM4uE-F8) |
-| `photos/207NEuFvjlg.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-top-of-a-cliff-207NEuFvjlg) |
-| `photos/2gVgVf5CNAE.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-top-of-a-sandy-hill-2gVgVf5CNAE) |
-| `photos/XDtzu1D2P8c.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-desert-with-rocks-and-sand-XDtzu1D2P8c) |
-| `photos/THlO6Mkf5uI.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-desert-landscape-with-rocks-and-sand-THlO6Mkf5uI) |
-| `photos/gOqBe7ropxM.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-top-of-a-rocky-hill-gOqBe7ropxM) |
-| `photos/nrhz95KUhrI.jpg` | Tomasz Zuczek | [unsplash](https://unsplash.com/photos/white-clouds-nrhz95KUhrI) |
-| `photos/9633dHhioC8.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-walking-through-a-canyon-in-the-desert-9633dHhioC8) |
-| `photos/rVC6O_gDE0Q.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-in-the-desert-holding-a-lantern-rVC6O_gDE0Q) |
-| `photos/t3dlLOhdEzs.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-view-of-a-mountain-range-in-the-desert-t3dlLOhdEzs) |
-| `photos/ckfXPMb2_BI.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-standing-next-to-a-tent-in-the-desert-ckfXPMb2_BI) |
-| `photos/AC3T7tvwPrY.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-lone-person-standing-in-the-middle-of-a-desert-AC3T7tvwPrY) |
-| `photos/_jfejQo2tZw.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-large-rock-formation-with-a-small-hole-in-the-middle-of-it-_jfejQo2tZw) |
-| `photos/f5ZB0LHwi0s.jpg` | Hala AlGhanim | [unsplash](https://unsplash.com/photos/kingdom-centre-skyscraper-in-riyadh-f5ZB0LHwi0s) |
-| `photos/fYTVHcpak2g.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-rock-formation-in-the-desert-with-mountains-in-the-background-fYTVHcpak2g) |
-| `photos/85ey1vFIwkc.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-climbing-up-the-side-of-a-mountain-85ey1vFIwkc) |
-| `photos/s3leOixsIX0.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-desert-with-rocks-and-sand-s3leOixsIX0) |
-| `photos/s6g6ZSxM3kQ.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-swimming-in-the-ocean-with-a-mountain-in-the-background-s6g6ZSxM3kQ) |
-| `photos/uqAUg1zvMXQ.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-top-of-a-mountain-at-sunset-uqAUg1zvMXQ) |
-| `photos/SGZ5DkDOoRo.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-desert-landscape-with-mountains-in-the-distance-SGZ5DkDOoRo) |
-| `photos/0rvKw0fDiHk.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-in-the-middle-of-a-canyon-at-night-0rvKw0fDiHk) |
-| `photos/r4ZSR0cKJw8.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-desert-landscape-with-a-mountain-range-in-the-background-r4ZSR0cKJw8) |
-| `photos/yUcH008GS6A.jpg` | NEOM | [unsplash](https://unsplash.com/photos/two-tents-set-up-in-the-desert-under-a-night-sky-yUcH008GS6A) |
-| `photos/7EkyXZYeYsw.jpg` | Damir Babacic | [unsplash](https://unsplash.com/photos/people-walking-on-desert-during-daytime-7EkyXZYeYsw) |
-| `photos/4q87Z96NBYg.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-desert-with-rocks-and-sand-4q87Z96NBYg) |
-| `photos/39n8YVSn0d4.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-desert-with-rocks-and-sand-39n8YVSn0d4) |
-| `photos/g9wCI64k2yw.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-standing-in-the-middle-of-a-desert-g9wCI64k2yw) |
-| `photos/G8_JBLFMWTg.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-ram-standing-on-top-of-a-large-rock-G8_JBLFMWTg) |
-| `photos/kzEFwhXPXwo.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-standing-in-a-narrow-canyon-between-two-mountains-kzEFwhXPXwo) |
-| `photos/0SUho_B0nus.jpg` | NEOM | [unsplash](https://unsplash.com/photos/hiker-in-silhouette-on-rocky-ridge-0SUho_B0nus) |
-| `photos/xAPIN3qwZN0.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-woman-in-an-orange-dress-walking-through-a-canyon-xAPIN3qwZN0) |
-| `photos/SUIMrEKVOXc.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-standing-in-the-middle-of-a-desert-at-night-SUIMrEKVOXc) |
-| `photos/anozjF6uqI0.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-top-of-a-mountain-at-sunset-anozjF6uqI0) |
-| `photos/LAj90eAXOZA.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-large-body-of-water-surrounded-by-mountains-LAj90eAXOZA) |
-| `photos/ud9NlvvEzUI.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-sitting-on-a-rock-in-the-desert-ud9NlvvEzUI) |
-| `photos/dMSYsXdwl9M.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-desert-with-rocks-and-sand-dMSYsXdwl9M) |
-| `photos/seX13AzLqls.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-sitting-inside-of-a-tent-in-the-desert-seX13AzLqls) |
-| `photos/x4vxK4VGKX0.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-woman-standing-on-top-of-a-sand-dune-x4vxK4VGKX0) |
-| `photos/7vOpzRF33Zo.jpg` | Rabah Al Shammary | [unsplash](https://unsplash.com/photos/sand-dune-and-mountain-scenery-7vOpzRF33Zo) |
-| `photos/D1RR-UEnsjw.jpg` | BASHAER 🌟 | [unsplash](https://unsplash.com/photos/low-light-photo-of-dew-drops-on-leaves-D1RR-UEnsjw) |
-| `photos/HbixalFpY1w.jpg` | RAKAN ALREQABI | [unsplash](https://unsplash.com/photos/silhouette-of-man-riding-on-camel-HbixalFpY1w) |
-| `photos/iQR2jzuw9m8.jpg` | NEOM | [unsplash](https://unsplash.com/photos/the-sun-is-setting-over-a-mountain-range-iQR2jzuw9m8) |
-| `photos/ihIKOg_lHgI.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-top-of-a-rock-under-a-sky-filled-with-stars-ihIKOg_lHgI) |
-| `photos/9f7oiGARGIg.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-in-the-middle-of-a-desert-9f7oiGARGIg) |
-| `photos/bRRy9ucK1rY.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-large-rock-formation-in-the-middle-of-a-desert-bRRy9ucK1rY) |
-| `photos/epQdtCvBrc4.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-rock-formation-in-the-desert-epQdtCvBrc4) |
-| `photos/IU-gFwAyazs.jpg` | imran sm | [unsplash](https://unsplash.com/photos/green-mountains-under-white-clouds-and-blue-sky-during-daytime-IU-gFwAyazs) |
-| `photos/tUqMoFE_eAE.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-desert-with-rocks-and-sand-tUqMoFE_eAE) |
-| `photos/fNXY1xjZQYI.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-couple-of-women-standing-next-to-each-other-fNXY1xjZQYI) |
-| `photos/3DPaL6XDcZE.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-and-a-woman-walking-in-the-desert-3DPaL6XDcZE) |
-| `photos/va9218QJFAk.jpg` | NEOM | [unsplash](https://unsplash.com/photos/the-sun-is-setting-over-a-desert-landscape-va9218QJFAk) |
-| `photos/MV7iHCilMJc.jpg` | NEOM | [unsplash](https://unsplash.com/photos/the-sun-is-setting-over-a-rocky-landscape-MV7iHCilMJc) |
-| `photos/Xm1wdkNUwrY.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-standing-in-front-of-a-desert-landscape-Xm1wdkNUwrY) |
-| `photos/qGH25zv5xMk.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-a-rock-in-the-middle-of-a-canyon-qGH25zv5xMk) |
-| `photos/ljEXet84nL8.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-a-desert-with-rocks-and-sand-ljEXet84nL8) |
-| `photos/AGZgrNeq7Kg.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-ram-standing-on-top-of-a-rocky-mountain-AGZgrNeq7Kg) |
-| `photos/e5UUZcgQ5IU.jpg` | Kemo Sahab | [unsplash](https://unsplash.com/photos/brown-mountains-during-nighttime-e5UUZcgQ5IU) |
-| `photos/ARpmY5qq7Lk.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-row-of-palm-trees-with-mountains-in-the-background-ARpmY5qq7Lk) |
-| `photos/dfglhJbc4Uc.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-ram-standing-on-top-of-a-rocky-mountain-dfglhJbc4Uc) |
-| `photos/lrhF4w-KKjA.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-in-a-narrow-canyon-between-two-mountains-lrhF4w-KKjA) |
-| `photos/Iogsh4Cbdjs.jpg` | NEOM | [unsplash](https://unsplash.com/photos/an-aerial-view-of-rocks-and-dirt-in-the-desert-Iogsh4Cbdjs) |
-| `photos/wSJmlKMecHU.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-in-the-middle-of-a-desert-wSJmlKMecHU) |
-| `photos/01u4zLK54tE.jpg` | Kemo Sahab | [unsplash](https://unsplash.com/photos/person-standing-on-mountain-in-front-of-body-of-water-01u4zLK54tE) |
-| `photos/_5TOw0ED9Jk.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-swimming-in-the-water-near-a-coral-reef-_5TOw0ED9Jk) |
-| `photos/RqfFauPXJx0.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-walking-through-a-desert-area-with-large-rocks-RqfFauPXJx0) |
-| `photos/wMHauMZiQjg.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-a-rock-in-a-canyon-wMHauMZiQjg) |
-| `photos/qqwX49ov8UY.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-small-antelope-standing-in-the-middle-of-a-desert-qqwX49ov8UY) |
-| `photos/pyThxd4x8Tk.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-in-a-wet-suit-swimming-in-the-ocean-pyThxd4x8Tk) |
-| `photos/_TFgiFZyH6M.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-in-front-of-a-rock-formation-_TFgiFZyH6M) |
-| `photos/QOGeYSi11-w.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-wearing-a-hat-looking-out-over-the-desert-QOGeYSi11-w) |
-| `photos/UuzkCF-jmPY.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-walking-in-the-desert-UuzkCF-jmPY) |
-| `photos/0rCJ-y3wx6g.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-group-of-antelope-standing-next-to-each-other-0rCJ-y3wx6g) |
-| `photos/9Jgo0Ix_TRw.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-is-walking-through-a-narrow-canyon-9Jgo0Ix_TRw) |
-| `photos/eOWabmCNEdg.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-person-standing-on-top-of-a-large-rock-eOWabmCNEdg) |
-| `photos/oem64GHBGH8.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-woman-is-standing-between-two-palm-trees-oem64GHBGH8) |
-| `photos/w-yuRFSkbVw.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-man-in-a-red-shirt-is-looking-at-the-desert-w-yuRFSkbVw) |
-| `photos/efzvMAIpfWY.jpg` | NEOM | [unsplash](https://unsplash.com/photos/a-couple-of-people-that-are-standing-in-the-dirt-efzvMAIpfWY) |
-| `photos/_Fmibx42BVU.jpg` | YUNUS A KHALIFAH | [unsplash](https://unsplash.com/photos/panoramic-photography-of-desert-during-daytime-_Fmibx42BVU) |
-| `photos/rkRYbmPuhOE.jpg` | Stijn te Strake | [unsplash](https://unsplash.com/photos/birds-eye-photography-of-city-rkRYbmPuhOE) |
+| File | Author | Licence | Source |
+|---|---|---|---|
+| `photos/sh06.jpg` | khamenei.ir | CC BY 4.0 | [The Golden Dome of Imam Reza shrine - 21 March 2018 (13970101 033](https://commons.wikimedia.org/wiki/File:The_Golden_Dome_of_Imam_Reza_shrine_-_21_March_2018_(13970101_0339269).jpg) |
+| `photos/sh10.jpg` | Amir Pashaei | CC BY-SA 4.0 | [An iwan of Fatima Masumeh Shrine, qom, iran.jpg](https://commons.wikimedia.org/wiki/File:An_iwan_of_Fatima_Masumeh_Shrine,_qom,_iran.jpg) |
+| `photos/sh11.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Ceiling of a shabestan in Fatima Masumeh Shrine, Qom, Iran.jpg](https://commons.wikimedia.org/wiki/File:Ceiling_of_a_shabestan_in_Fatima_Masumeh_Shrine,_Qom,_Iran.jpg) |
+| `photos/sh12.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Ceiling of a shabestan in Fatima Masumeh Shrine, qom, iran, 3.jpg](https://commons.wikimedia.org/wiki/File:Ceiling_of_a_shabestan_in_Fatima_Masumeh_Shrine,_qom,_iran,_3.jpg) |
+| `photos/sh13.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Ceiling of an interance of Atabki Sahn in Fatima Masumeh Shrine, ](https://commons.wikimedia.org/wiki/File:Ceiling_of_an_interance_of_Atabki_Sahn_in_Fatima_Masumeh_Shrine,_Qom,_Iran.jpg) |
+| `photos/sh14.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Ceiling of an interance of Atabki Sahn in Fatima Masumeh Shrine, ](https://commons.wikimedia.org/wiki/File:Ceiling_of_an_interance_of_Atabki_Sahn_in_Fatima_Masumeh_Shrine,_Qom,_Iran2.jpg) |
+| `photos/sh15.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Ceiling of interance of a room in Atabaki sahn in Fatima Masumeh ](https://commons.wikimedia.org/wiki/File:Ceiling_of_interance_of_a_room_in_Atabaki_sahn_in_Fatima_Masumeh_Shrine,_Qom,Iran4.jpg) |
+| `photos/sh16.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Fatima Masumeh Shrine, Qom, Iran.jpg](https://commons.wikimedia.org/wiki/File:Fatima_Masumeh_Shrine,_Qom,_Iran.jpg) |
+| `photos/sh17.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Fatima Masumeh Shrine4, Qom, Iran.jpg](https://commons.wikimedia.org/wiki/File:Fatima_Masumeh_Shrine4,_Qom,_Iran.jpg) |
+| `photos/sh18.jpg` | Amir Pashaei | CC BY-SA 4.0 | [One of the iwan ceilings of Fatima Masumeh Shrine, Qom, Iran.jpg](https://commons.wikimedia.org/wiki/File:One_of_the_iwan_ceilings_of_Fatima_Masumeh_Shrine,_Qom,_Iran.jpg) |
+| `photos/sh20.jpg` | Laurens R. Krol | CC BY 4.0 | [2018-09-22 Iran, Shiraz, Nasir al-Mulk Mosque (winter prayer hall](https://commons.wikimedia.org/wiki/File:2018-09-22_Iran,_Shiraz,_Nasir_al-Mulk_Mosque_(winter_prayer_hall)_(3).jpg) |
+| `photos/sh22.jpg` | Diego Delso | CC BY-SA 4.0 | [Mezquita de Nasirolmolk, Shiraz, Irán, 2016-09-24, DD 57-59 HDR.j](https://commons.wikimedia.org/wiki/File:Mezquita_de_Nasirolmolk,_Shiraz,_Ir%C3%A1n,_2016-09-24,_DD_57-59_HDR.jpg) |
+| `photos/sh24.jpg` | Adam Jones from Kelowna, BC, Canada | CC BY-SA 2.0 | [Dome of Sheikh Lotfollah Mosque - Isfahan - Iran (7433088760).jpg](https://commons.wikimedia.org/wiki/File:Dome_of_Sheikh_Lotfollah_Mosque_-_Isfahan_-_Iran_(7433088760).jpg) |
+| `photos/sh25.jpg` | Phillip Maiwald (Nikopol) | CC BY-SA 3.0 | [Isfahan Lotfollah mosque ceiling.jpg](https://commons.wikimedia.org/wiki/File:Isfahan_Lotfollah_mosque_ceiling.jpg) |
+| `photos/sh27.jpg` | Bernard Gagnon | CC BY-SA 4.0 | [Sheikh Lotfollah Mosque, Isfahan 02 cropped.jpg](https://commons.wikimedia.org/wiki/File:Sheikh_Lotfollah_Mosque,_Isfahan_02_cropped.jpg) |
+| `photos/sh28.jpg` | Amirpashaei | CC BY-SA 4.0 | [Sheikh Lotfollah Mosque2, Isfahan, Iran.jpg](https://commons.wikimedia.org/wiki/File:Sheikh_Lotfollah_Mosque2,_Isfahan,_Iran.jpg) |
+| `photos/sh29.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Sheikh Lotfollah Mosque2.jpg](https://commons.wikimedia.org/wiki/File:Sheikh_Lotfollah_Mosque2.jpg) |
+| `photos/sh31.jpg` | Diego Delso | CC BY-SA 4.0 | [Mausoleo de Shah Cheragh, Shiraz, Irán, 2016-09-24, DD 32.jpg](https://commons.wikimedia.org/wiki/File:Mausoleo_de_Shah_Cheragh,_Shiraz,_Ir%C3%A1n,_2016-09-24,_DD_32.jpg) |
+| `photos/sh34.jpg` | Arosha-photo ( Reza Sobhani ) | CC BY-SA 4.0 | [Shah Cheragh Holy Shrine. Shiraz-Iran 3.jpg](https://commons.wikimedia.org/wiki/File:Shah_Cheragh_Holy_Shrine._Shiraz-Iran_3.jpg) |
+| `photos/sh36.jpg` | Yare zaman2000 | CC BY-SA 4.0 | [Frame in the frame of Imam Mosque of Isfahan.jpg](https://commons.wikimedia.org/wiki/File:Frame_in_the_frame_of_Imam_Mosque_of_Isfahan.jpg) |
+| `photos/sh37.jpg` | Diego Delso | CC BY-SA 4.0 | [Gran Mezquita de Isfahán, Isfahán, Irán, 2016-09-20, DD 26.jpg](https://commons.wikimedia.org/wiki/File:Gran_Mezquita_de_Isfah%C3%A1n,_Isfah%C3%A1n,_Ir%C3%A1n,_2016-09-20,_DD_26.jpg) |
+| `photos/sh39.jpg` | Diego Delso | CC BY-SA 4.0 | [Mezquita Shah, Isfahán, Irán, 2016-09-20, DD 64.jpg](https://commons.wikimedia.org/wiki/File:Mezquita_Shah,_Isfah%C3%A1n,_Ir%C3%A1n,_2016-09-20,_DD_64.jpg) |
+| `photos/sh42.jpg` | Amir Pashaei | CC BY-SA 4.0 | [Shah Mosque (Isfahan).jpg](https://commons.wikimedia.org/wiki/File:Shah_Mosque_(Isfahan).jpg) |
+| `photos/sh43.jpg` | Skot | CC BY-SA 4.0 | [Shah Mosque (Isfahan, Iran) 2013 02.jpg](https://commons.wikimedia.org/wiki/File:Shah_Mosque_(Isfahan,_Iran)_2013_02.jpg) |
+| `photos/sh44.jpg` | Skot | CC BY-SA 4.0 | [Shah Mosque (Isfahan, Iran) 2013 03.jpg](https://commons.wikimedia.org/wiki/File:Shah_Mosque_(Isfahan,_Iran)_2013_03.jpg) |
+| `photos/sh45.jpg` | Skot | CC BY-SA 4.0 | [Shah Mosque (Isfahan, Iran) 2013 07.jpg](https://commons.wikimedia.org/wiki/File:Shah_Mosque_(Isfahan,_Iran)_2013_07.jpg) |
+| `photos/sh47.jpg` | Skot | CC BY-SA 4.0 | [Columns of Vakil Mosque in Shiraz.jpg](https://commons.wikimedia.org/wiki/File:Columns_of_Vakil_Mosque_in_Shiraz.jpg) |

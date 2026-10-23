@@ -79,39 +79,50 @@ check("no basmala in front of a verse (it is not part of the verse)", not basmal
 check("surah names keep آ (آل عمران)", all("سورة ال " not in v["surah"] for v in verses), sorted({v["surah"] for v in verses if "سورة ال " in v["surah"]}))
 shown = [json.dumps(h["parts"], ensure_ascii=False) for h in hadith]
 check("no verse or hadith twice", len({v["text"] for v in verses}) == len(verses) and len(set(shown)) == len(shown))
-raw = json.loads((ROOT / "assets/shared/hadith.json").read_text(encoding="utf-8"))
 sys.path.insert(0, str(ROOT / "src"))
 from build import narration_parts, simple_parts, weak_in_tirmidhi, weak_by_scholars, albani_accepts, HADITH_MAX_WORDS, ISNAD_MAX_WORDS, js_json   # noqa: E402
 embedded = js_json({"c": "</script><b>"})
 check("embedded JSON cannot end its <script>", "</" not in embedded and json.loads(embedded)["c"] == "</script><b>", embedded)
 sys.path.insert(0, str(ROOT / ".github/tools"))
-from verify_hadith import norm as plain   # noqa: E402  (the six-book check's own matching)
-form = lambda h: json.dumps(simple_parts(narration_parts(h["full"]["text"])), ensure_ascii=False)
-found = {form(h) for h in raw if h.get("found") and h.get("full")}
-check("hadith on screen come from narrations found in the six books", set(shown) <= found, len(set(shown) - found))
-full_text = {plain(h["full"]["text"]) for h in raw if h.get("full")}
-spelled = lambda t: plain(t.replace("ﷺ", " صلى الله عليه وسلم "))   # ﷺ on screen is the book's «صلى الله عليه وسلم»
-cut = [t[:40] for h in hadith for k, t in h["parts"] if k == "q" and not any(spelled(t) in f for f in full_text)]
-check("his words on screen are the book's words, uncut", not cut, cut)
-opener = lambda h: plain(h["parts"][0][1]).split()[1:2]
-not_a_name = [plain(h["parts"][0][1])[:30] for h in hadith if h["parts"][0][0] != "n" or not h["parts"][0][1].startswith("عن ")
-              or opener(h)[0] in ("رسول", "النبي", "لي", "لنا", "قال", "سمع", "يقول", "ابا", "ابو", "ابيه", "جده", "اذناي", "رجل", "انسا", "سعدا")]
-check("each hadith starts from the companion («عن أبي هريرة …»)", not not_a_name, not_a_name)
-check("each full narration holds the words it was found by",
-      all(plain(h["text"]) in plain(h["full"]["text"]) for h in raw if h.get("full")),
-      [h["text"] for h in raw if h.get("full") and plain(h["text"]) not in plain(h["full"]["text"])])
-weak = {form(h) for h in raw if h.get("full") and weak_in_tirmidhi(h["full"]["text"])}
-check("no hadith al-Tirmidhi grades only غريب/ضعيف, or as a companion's words, is shown", weak and not (weak & set(shown)), len(weak & set(shown)))
-long_chain = {form(h) for h in raw if h.get("full") and (lambda w: w and w[0][0] == "n" and len(w[0][1].split()) > ISNAD_MAX_WORDS)(narration_parts(h["full"]["text"]))}
-check(f"no hadith with an isnad over {ISNAD_MAX_WORDS} words is shown", not (long_chain & set(shown)), len(long_chain & set(shown)))
-graded_weak = {form(h) for h in raw if h.get("full") and weak_by_scholars(h["full"].get("grades"))}
-check("no hadith the scholars grade weak (Al-Albani first) is shown", not (graded_weak & set(shown)), len(graded_weak & set(shown)))
-not_albani = [f"{h['full']['book']} {h['full']['number']}" for h in raw if h.get("found")
-              and not (h.get("full") and albani_accepts(h["full"]["book"], h["full"].get("grades")))]
-check("no hadith in the data unless Bukhari, Muslim, or Al-Albani grades it Sahih/Hasan/Hasan Sahih", not not_albani, not_albani)
-sunan = [h for h in raw if h.get("full") and h["full"]["book"] not in ("صحيح البخاري", "صحيح مسلم")]
-check("every narration from the four Sunan carries the scholars' grades", all(h["full"].get("grades") for h in sunan),
-      [h["text"][:30] for h in sunan if not h["full"].get("grades")])
+SHIA = (ROOT / "assets/shared/hadith_shia.json").exists()   # the Shia edition: Al-Kafi and Nahj al-Balagha, not the six books
+if SHIA:
+    raw = json.loads((ROOT / "assets/shared/hadith_shia.json").read_text(encoding="utf-8"))
+    check("Shia hadith: each has a narrator line, the words and a book and number as source",
+          all(h["parts"][0][0] == "n" and h["parts"][1][0] == "q" and len(h["parts"]) == 2 and h["parts"][1][1].strip()
+              and re.match(r"^(الكافي|نهج البلاغة) ·", h["source"]) for h in raw))
+    check("Shia hadith: Al-Kafi ones carry the al-Majlisi grade (sahih, hasan or muwathaq)",
+          all("المجلسي" in h["source"] for h in raw if h["source"].startswith("الكافي")))
+    check("Shia hadith: no text twice", len({h["parts"][1][1] for h in raw}) == len(raw))
+else:
+    raw = json.loads((ROOT / "assets/shared/hadith.json").read_text(encoding="utf-8"))
+    sys.path.insert(0, str(ROOT / ".github/tools"))
+    from verify_hadith import norm as plain   # noqa: E402  (the six-book check's own matching)
+    form = lambda h: json.dumps(simple_parts(narration_parts(h["full"]["text"])), ensure_ascii=False)
+    found = {form(h) for h in raw if h.get("found") and h.get("full")}
+    check("hadith on screen come from narrations found in the six books", set(shown) <= found, len(set(shown) - found))
+    full_text = {plain(h["full"]["text"]) for h in raw if h.get("full")}
+    spelled = lambda t: plain(t.replace("ﷺ", " صلى الله عليه وسلم "))   # ﷺ on screen is the book's «صلى الله عليه وسلم»
+    cut = [t[:40] for h in hadith for k, t in h["parts"] if k == "q" and not any(spelled(t) in f for f in full_text)]
+    check("his words on screen are the book's words, uncut", not cut, cut)
+    opener = lambda h: plain(h["parts"][0][1]).split()[1:2]
+    not_a_name = [plain(h["parts"][0][1])[:30] for h in hadith if h["parts"][0][0] != "n" or not h["parts"][0][1].startswith("عن ")
+                  or opener(h)[0] in ("رسول", "النبي", "لي", "لنا", "قال", "سمع", "يقول", "ابا", "ابو", "ابيه", "جده", "اذناي", "رجل", "انسا", "سعدا")]
+    check("each hadith starts from the companion («عن أبي هريرة …»)", not not_a_name, not_a_name)
+    check("each full narration holds the words it was found by",
+          all(plain(h["text"]) in plain(h["full"]["text"]) for h in raw if h.get("full")),
+          [h["text"] for h in raw if h.get("full") and plain(h["text"]) not in plain(h["full"]["text"])])
+    weak = {form(h) for h in raw if h.get("full") and weak_in_tirmidhi(h["full"]["text"])}
+    check("no hadith al-Tirmidhi grades only غريب/ضعيف, or as a companion's words, is shown", weak and not (weak & set(shown)), len(weak & set(shown)))
+    long_chain = {form(h) for h in raw if h.get("full") and (lambda w: w and w[0][0] == "n" and len(w[0][1].split()) > ISNAD_MAX_WORDS)(narration_parts(h["full"]["text"]))}
+    check(f"no hadith with an isnad over {ISNAD_MAX_WORDS} words is shown", not (long_chain & set(shown)), len(long_chain & set(shown)))
+    graded_weak = {form(h) for h in raw if h.get("full") and weak_by_scholars(h["full"].get("grades"))}
+    check("no hadith the scholars grade weak (Al-Albani first) is shown", not (graded_weak & set(shown)), len(graded_weak & set(shown)))
+    not_albani = [f"{h['full']['book']} {h['full']['number']}" for h in raw if h.get("found")
+                  and not (h.get("full") and albani_accepts(h["full"]["book"], h["full"].get("grades")))]
+    check("no hadith in the data unless Bukhari, Muslim, or Al-Albani grades it Sahih/Hasan/Hasan Sahih", not not_albani, not_albani)
+    sunan = [h for h in raw if h.get("full") and h["full"]["book"] not in ("صحيح البخاري", "صحيح مسلم")]
+    check("every narration from the four Sunan carries the scholars' grades", all(h["full"].get("grades") for h in sunan),
+          [h["text"][:30] for h in sunan if not h["full"].get("grades")])
 check("every hadith on screen has the Prophet's words and fits the card",
       all(any(k == "q" for k, _ in h["parts"]) and sum(len(t.split()) for _, t in h["parts"]) <= HADITH_MAX_WORDS for h in hadith))
 font = set(TTFont(ROOT / "assets/fonts/Thmanyah-Regular.woff2").getBestCmap())
