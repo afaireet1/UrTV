@@ -659,8 +659,8 @@ function tickRamadan(){
   }
 
   // ---- next Ahl al-Bayt occasion (instead of the Ramadan countdown) ----
-  const list = nextAhlBayt();   // the next three, shown in turn
-  const nx = list && list[Math.floor(Date.now()/15000) % list.length];
+  const list = nextAhlBayt();   // the next occasions; only the nearest is shown
+  const nx = list && list[0];
   elL.textContent = 'مناسبات أهل البيت عليهم السلام';
   if(!nx){ elD.textContent='—'; elS.textContent=''; return; }
   elD.innerHTML = nx.days === 0 ? 'اليوم' : nx.days === 1 ? 'غدًا' : nx.days === 2 ? 'بعد يومين'
