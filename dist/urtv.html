@@ -659,7 +659,8 @@ function tickRamadan(){
   }
 
   // ---- next Ahl al-Bayt occasion (instead of the Ramadan countdown) ----
-  const nx = nextAhlBayt();
+  const list = nextAhlBayt();   // the next three, shown in turn
+  const nx = list && list[Math.floor(Date.now()/15000) % list.length];
   elL.textContent = 'مناسبات أهل البيت عليهم السلام';
   if(!nx){ elD.textContent='—'; elS.textContent=''; return; }
   elD.innerHTML = nx.days === 0 ? 'اليوم' : nx.days === 1 ? 'غدًا' : nx.days === 2 ? 'بعد يومين'
@@ -676,10 +677,10 @@ function nextAhlBayt(){
   let found = null;
   try{
     const fmt = new Intl.DateTimeFormat('en-u-ca-' + CONFIG.hijriCalendar,{timeZone:CONFIG.timezone,month:'numeric',day:'numeric'});
-    for(let i=0;i<400 && !found;i++){
+    for(let i=0;i<400 && (!found || found.length < 3);i++){
       const f = fmt.formatToParts(HJ(new Date(Date.now()+i*86400000)));
       const key = (+f.find(x=>x.type==='month').value) + '/' + (+f.find(x=>x.type==='day').value);
-      if(SHIA_OCCASIONS[key] && !NOT_AHL[key]) found = {days:i, name:SHIA_OCCASIONS[key]};
+      if(SHIA_OCCASIONS[key] && !NOT_AHL[key]) (found = found || []).push({days:i, name:SHIA_OCCASIONS[key]});
     }
   }catch(e){}
   AHL_CACHE = {day: dayKey, val: found};
