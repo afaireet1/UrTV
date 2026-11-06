@@ -1,8 +1,18 @@
 [
  {
+  "f": "sm03.jpg",
+  "c": "Taisir Mahdi · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 0.94
+ },
+ {
   "f": "sh10.jpg",
   "c": "Amir Pashaei · CC BY-SA 4.0 · Wikimedia Commons",
   "d": 0.87
+ },
+ {
+  "f": "sm05.jpg",
+  "c": "Samerhusseini87 · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 1.0
  },
  {
   "f": "sh11.jpg",
@@ -10,9 +20,19 @@
   "d": 0.65
  },
  {
+  "f": "sm06.jpg",
+  "c": "Mostafameraji · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 0.92
+ },
+ {
   "f": "sh12.jpg",
   "c": "Amir Pashaei · CC BY-SA 4.0 · Wikimedia Commons",
   "d": 0.75
+ },
+ {
+  "f": "sm07.jpg",
+  "c": "Lstfllw203 · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 0.87
  },
  {
   "f": "sh13.jpg",
@@ -25,9 +45,19 @@
   "d": 1.0
  },
  {
+  "f": "sm13.jpg",
+  "c": "Mostafameraji · CC0 · Wikimedia Commons",
+  "d": 0.67
+ },
+ {
   "f": "sh15.jpg",
   "c": "Amir Pashaei · CC BY-SA 4.0 · Wikimedia Commons",
   "d": 0.87
+ },
+ {
+  "f": "sm15.jpg",
+  "c": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 0.91
  },
  {
   "f": "sh16.jpg",
@@ -35,9 +65,19 @@
   "d": 1.0
  },
  {
+  "f": "sm18.jpg",
+  "c": "ZarlokX · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 0.65
+ },
+ {
   "f": "sh17.jpg",
   "c": "Amir Pashaei · CC BY-SA 4.0 · Wikimedia Commons",
   "d": 0.87
+ },
+ {
+  "f": "sm19.jpg",
+  "c": "ZarlokX · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 0.64
  },
  {
   "f": "sh18.jpg",
@@ -48,6 +88,11 @@
   "f": "sh20.jpg",
   "c": "Laurens R. Krol · CC BY 4.0 · Wikimedia Commons",
   "d": 1.0
+ },
+ {
+  "f": "sm26.jpg",
+  "c": "Mostafameraji · CC BY-SA 4.0 · Wikimedia Commons",
+  "d": 0.83
  },
  {
   "f": "sh22.jpg",
