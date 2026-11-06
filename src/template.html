@@ -90,6 +90,8 @@
     border:1px solid rgba(217,178,106,.38);
     border-radius:18px;
     padding:1.7vh 1.4vw;
+    transform:perspective(1500px) rotateY(5deg);transform-origin:100% 50%;
+    box-shadow:-18px 22px 50px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,244,214,.25);
   }
   .week .hd{
     display:flex;align-items:center;gap:.7em;margin-bottom:1vh;
@@ -150,7 +152,7 @@
     color:#FFF1CB;                                   /* fallback where background-clip:text is missing */
     background:linear-gradient(180deg,#FFFEF8 0%,#FDF0CF 50%,#F0D49A 100%);
     -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-    filter:drop-shadow(0 0 22px rgba(0,0,0,.78)) drop-shadow(0 8px 40px rgba(0,0,0,.65));
+    filter:drop-shadow(1px 1px 0 #D2AC5C) drop-shadow(2px 2px 0 #A9822F) drop-shadow(3px 3px 0 #6E521A) drop-shadow(0 14px 30px rgba(0,0,0,.75));
   }
   .clock .sep,.clock .ampm{-webkit-text-fill-color:currentColor}
   .clock .d{unicode-bidi:isolate}
@@ -225,8 +227,8 @@
   /* A new photo settles in over a minute, then holds still: an endless drift kept the TV redrawing
      the whole screen 60 times a second, for hours. */
   @keyframes settle{
-    from{transform:scale(1.055) translate3d(-.55%,-.4%,0)}
-    to{transform:scale(1.03) translate3d(0,0,0)}
+    from{transform:perspective(1400px) scale(1.09) rotateY(-3deg) translate3d(-1%,-.6%,0)}
+    to{transform:perspective(1400px) scale(1.03) rotateY(0) translate3d(0,0,0)}
   }
   @media (prefers-reduced-motion:no-preference){.photo.settle{animation:settle 60s ease-out both}}
 
