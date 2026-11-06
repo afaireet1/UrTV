@@ -146,9 +146,13 @@
     font-family:'ThmanyahDisplay','Thmanyah',serif;
     font-weight:700;
     font-size:clamp(120px,min(17vw,31vh),345px);line-height:.92;letter-spacing:.022em;
-    color:#FFFDF6;font-variant-numeric:tabular-nums;
-    text-shadow:0 4px 70px rgba(0,0,0,.65), 0 0 130px rgba(255,236,190,.12);
+    font-variant-numeric:tabular-nums;
+    color:#FFF1CB;                                   /* fallback where background-clip:text is missing */
+    background:linear-gradient(180deg,#FFFEF8 0%,#FDF0CF 50%,#F0D49A 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 22px rgba(0,0,0,.78)) drop-shadow(0 8px 40px rgba(0,0,0,.65));
   }
+  .clock .sep,.clock .ampm{-webkit-text-fill-color:currentColor}
   .clock .d{unicode-bidi:isolate}
   .clock .d i{font-style:normal}
   .clock .d i + i{margin-left:var(--digit-gap,.09em)}
@@ -168,7 +172,8 @@
   .bottom{
     display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr) minmax(0,1.3fr);
     gap:2.4vw;align-items:start;
-    border-top:1px solid rgba(220,184,111,.30);
+    border-top:1px solid transparent;
+    border-image:linear-gradient(90deg,rgba(217,178,106,0),rgba(217,178,106,.65) 18%,rgba(217,178,106,.65) 82%,rgba(217,178,106,0)) 1;
     padding-top:2.1vh;
   }
   .panel{min-width:0}
