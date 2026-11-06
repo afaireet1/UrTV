@@ -1388,5 +1388,5 @@ document.addEventListener('keydown', e=>{
 
 boot();
 </script>
-</body>
+<script id="dbg">(function(){function m(){try{var q=function(s){var e=document.querySelector(s);if(!e)return s+' none';var b=e.getBoundingClientRect();return s+' x'+Math.round(b.left)+' w'+Math.round(b.width)};var t='iw '+innerWidth+' ih '+innerHeight+' sw '+document.documentElement.scrollWidth+' sx '+(window.scrollX||0)+' dpr '+window.devicePixelRatio+' | '+q('.stage')+' | '+q('.week')+' | '+q('.clockwrap')+' | '+q('.markets')+' | '+q('.mid');var d=document.getElementById('dbgbox');if(!d){d=document.createElement('div');d.id='dbgbox';d.style.cssText='position:fixed;left:25%;top:40%;width:70%;z-index:99999;background:#000;color:#0f0;font:16px monospace;padding:6px;direction:ltr;white-space:normal';document.body.appendChild(d)}d.textContent=t;console.log('METRICS '+t)}catch(e){console.log('METRICS ERR '+e)}}setInterval(m,1000);setTimeout(m,300)})()</script></body>
 </html>
