@@ -89,7 +89,6 @@
     background:linear-gradient(135deg,rgba(255,244,214,.11) 0%,rgba(10,18,20,.62) 38%,rgba(6,12,14,.72) 100%);   /* no backdrop blur: over a moving photo it is redone every frame */
     border:1px solid rgba(217,178,106,.38);
     border-radius:18px;
-    box-shadow:inset 0 1px 0 rgba(255,246,227,.28),0 18px 50px rgba(0,0,0,.40);
     padding:1.7vh 1.4vw;
   }
   .week .hd{
@@ -147,13 +146,9 @@
     font-family:'ThmanyahDisplay','Thmanyah',serif;
     font-weight:700;
     font-size:clamp(120px,min(17vw,31vh),345px);line-height:.92;letter-spacing:.022em;
-    font-variant-numeric:tabular-nums;
-    color:#FFF1CB;                                   /* fallback where background-clip:text is missing */
-    background:linear-gradient(180deg,#FFFEF8 0%,#FDF0CF 50%,#F0D49A 100%);
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-    filter:drop-shadow(0 0 22px rgba(0,0,0,.78)) drop-shadow(0 8px 40px rgba(0,0,0,.65));
+    color:#FFFDF6;font-variant-numeric:tabular-nums;
+    text-shadow:0 4px 70px rgba(0,0,0,.65), 0 0 130px rgba(255,236,190,.12);
   }
-  .clock .sep,.clock .ampm{-webkit-text-fill-color:currentColor}
   .clock .d{unicode-bidi:isolate}
   .clock .d i{font-style:normal}
   .clock .d i + i{margin-left:var(--digit-gap,.09em)}
@@ -173,8 +168,7 @@
   .bottom{
     display:grid;grid-template-columns:1fr .9fr 1.3fr;
     gap:2.4vw;align-items:start;
-    border-top:1px solid transparent;
-    border-image:linear-gradient(90deg,rgba(217,178,106,0),rgba(217,178,106,.65) 18%,rgba(217,178,106,.65) 82%,rgba(217,178,106,0)) 1;
+    border-top:1px solid rgba(220,184,111,.30);
     padding-top:2.1vh;
   }
   .panel{min-width:0}
@@ -1394,6 +1388,5 @@ document.addEventListener('keydown', e=>{
 
 boot();
 </script>
-<script id="dbg">setTimeout(function(){var r=function(q){var e=document.querySelector(q);if(!e)return q+':-';var b=e.getBoundingClientRect();return q+' x'+Math.round(b.left)+' w'+Math.round(b.width)};var d=document.createElement('div');d.style.cssText='position:fixed;left:20%;top:45%;z-index:99999;background:#000;color:#0f0;font:20px monospace;padding:8px;direction:ltr;white-space:pre';d.textContent=['iw '+innerWidth+' sw '+document.documentElement.scrollWidth+' bsw '+document.body.scrollWidth+' sx '+scrollX+' dpr '+devicePixelRatio,r('.stage'),r('.mid'),r('.week'),r('.clockwrap'),r('.bottom'),r('.markets'),r('.plist')].join('
-');document.body.appendChild(d)},800)</script></body>
+</body>
 </html>
